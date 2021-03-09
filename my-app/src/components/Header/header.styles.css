@@ -1,0 +1,30 @@
+.header-container{
+    background-color: rgb(0, 0, 0,.5);
+    position: relative;
+    color: white;
+    font-family: 'Courier Prime', monospace;
+}
+.title{
+    font-size:2rem;
+    
+}
+.header-nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+}
+ul li{
+    display:inline;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+#prem-btm{
+    background: rgb(000, 143, 116);
+    color:aliceblue 
+}
+#prem-btn:hover, #premium:hover{
+    background: aliceblue;   
+    color: rgb(000, 143, 116);
+}
