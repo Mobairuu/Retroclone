@@ -8,10 +8,13 @@
 }
 
 .carousel-img{
-    
     height:250px;
     width:150px;
     border-radius: 5%;
+}
+
+.title{
+  font-family:.5em;
 }
 
 

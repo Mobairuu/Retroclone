@@ -1,0 +1,20 @@
+.hero-img{
+    position:relative;
+    top:0;
+    left:0;
+    height: 800px;
+    width:100%;
+}
+
+.hero-container{
+    margin:0;
+    padding:0;
+    color:white;
+    font-family: Montserrat,sans-serif;
+    background: black;
+    margin-bottom: 10%;
+}
+
+.hero-show-title{
+    font-size:2rem;
+}
