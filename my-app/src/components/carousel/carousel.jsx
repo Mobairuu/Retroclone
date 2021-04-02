@@ -1,6 +1,7 @@
 import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import './carousel.styles.css'
 
 // Import Swiper styles
 import "swiper/swiper.scss";
@@ -61,34 +62,33 @@ let arr = [
   },
 ];
 
-const styles = {
-  img: {
-    width: "150",
-    height: "150",
-    marginBottom: "20px",
-  },
-};
+
 
 const Carousel = () => {
   const renderSlides = () =>
     arr.map((el) => (
       <SwiperSlide>
-        < img src={el.img} className="carousel-img"  />
+        <img  
+        src={el.img} 
+        className="carousel-img" 
+         />
         <h4 className="show-title">{el.title}</h4>
       </SwiperSlide>
     ));
 
   return (
-    <div className="carousel-box">
-      <h3>Anime</h3>
+  <div className="carousel-container">
+      <div className="title"><h2>Featured Anime</h2></div>
+      <div>
       <Swiper
-        spaceBetween={50}
-        slidesPerView={6}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-      >
+      spaceBetween={100}
+      slidesPerView={7}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+    >
         {renderSlides()}
-      </Swiper>
+        </Swiper>
+      </div>
     </div>
   );
 };
