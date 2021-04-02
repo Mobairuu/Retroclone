@@ -1,10 +1,20 @@
 import React from "react";
 // Import Swiper React components
+import SwiperCore, {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  EffectFade,
+} from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import './carousel.styles.css'
+import "./carousel.styles.css";
 
 // Import Swiper styles
 import "swiper/swiper.scss";
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
+import 'swiper/components/scrollbar/scrollbar.scss';
 
 let arr = [
   {
@@ -61,32 +71,35 @@ let arr = [
     title: "Code Geass",
   },
 ];
+SwiperCore.use([EffectFade]);
 
-
-
-const Carousel = () => {
+const Carousel = (props) => {
   const renderSlides = () =>
     arr.map((el) => (
       <SwiperSlide>
-        <img  
-        src={el.img} 
-        className="carousel-img" 
-         />
+        <img src={el.img} className="carousel-img" />
         <h4 className="show-title">{el.title}</h4>
       </SwiperSlide>
     ));
 
   return (
-  <div className="carousel-container">
-      <div className="title"><h2>Featured Anime</h2></div>
+    <div className="carousel-container">
+      <div className="title">
+        <h2>{props.category}</h2>
+      </div>
       <div>
-      <Swiper
-      spaceBetween={100}
-      slidesPerView={7}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-    >
-        {renderSlides()}
+       
+        <Swiper
+
+                                                spaceBetween={60}
+          slidesPerView={10}
+          loop
+          navigation
+          pagination={{ clickable: true }}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          {renderSlides()}
         </Swiper>
       </div>
     </div>
